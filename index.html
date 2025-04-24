@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TDS Uploader</title>
+</head>
+<body>
+  <h1>Upload Purchase Register Files</h1>
+  <form action="https://YOUR-N8N-URL/webhook/tds-upload" method="post" enctype="multipart/form-data">
+    <div>
+      <label>Previous month file:
+        <input type="file" name="previousFile" accept=".xlsx" required>
+      </label>
+    </div>
+    <div>
+      <label>Working month file:
+        <input type="file" name="workingFile" accept=".xlsx" required>
+      </label>
+    </div>
+    <div>
+      <label>Working Month (e.g. 15.Mar 2025):
+        <input type="text" name="workingMonthName" placeholder="15.Mar 2025" required>
+      </label>
+    </div>
+    <button type="submit">Run TDS Automation</button>
+  </form>
+</body>
+</html>
