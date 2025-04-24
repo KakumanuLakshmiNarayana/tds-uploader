@@ -3,24 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>TDS Uploader</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 2em auto; }
+    form div { margin-bottom: 1em; }
+    label { display: block; font-weight: bold; margin-bottom: 0.3em; }
+    input, button { font-size: 1em; padding: 0.4em; width: 100%; box-sizing: border-box; }
+    button { width: auto; padding: 0.6em 1.2em; }
+  </style>
 </head>
 <body>
   <h1>Upload Purchase Register Files</h1>
-<form action="https://avinari32.app.n8n.cloud/webhook/tds-upload" method="post" enctype="multipart/form-data">
+  <form action="https://avinari32.app.n8n.cloud/webhook/tds-upload" method="post" enctype="multipart/form-data">
     <div>
-      <label>Previous month file:
-        <input type="file" name="previousFile" accept=".xlsx" required>
-      </label>
+      <label for="previousFile">Previous month file</label>
+      <input type="file" id="previousFile" name="previousFile" accept=".xlsx">
     </div>
     <div>
-      <label>Working month file:
-        <input type="file" name="workingFile" accept=".xlsx" required>
-      </label>
+      <label for="workingFile">Working month file</label>
+      <input type="file" id="workingFile" name="workingFile" accept=".xlsx">
     </div>
     <div>
-      <label>Working Month (e.g. 15.Mar 2025):
-        <input type="text" name="workingMonthName" placeholder="15.Mar 2025" required>
-      </label>
+      <label for="workingMonthName">Working Month (e.g. 15.Mar 2025)</label>
+      <input type="text" id="workingMonthName" name="workingMonthName" placeholder="15.Mar 2025">
     </div>
     <button type="submit">Run TDS Automation</button>
   </form>
